@@ -1,0 +1,19 @@
+{
+    "name": "jenryollivierre/php-application-hooks",
+    "description": "PHP Application Hooks is a lightweight standalone package that lets you control when and where code can be executed within your application.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jenry Ollivierre",
+            "email": "jenry@jenryollivierre.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JenryOllivierre\\Hooks\\": "src/"
+        }
+    }
+}
