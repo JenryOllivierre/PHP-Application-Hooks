@@ -2,17 +2,19 @@
 
 namespace JenryOllivierre\Hooks;
 
+/**
+ * @author      Jenry Ollivierre
+ * 
+ * @since 2.0   First Introduced
+ *              Interface methods previously existed in another interface.
+ */
+
 interface Filterable
 {
     /**
-     * @since 1.1
-     * @author Jenry Ollivierre
-     */
-
-    /**
      * Add a callback to a specific filter.
      *
-     * @since 1.1
+     * @since 2.0
      * @param string $name
      * @param callable $callback
      * @param int $priority
@@ -24,7 +26,7 @@ interface Filterable
     /**
      * Apply all the callbacks that was added to a specific filter.
      *
-     * @since 1.1
+     * @since 2.0
      * @param string $name
      * @param mixed $value
      * @param array $args
@@ -35,7 +37,7 @@ interface Filterable
     /**
      * Check if anything have been added to the filters hook type.
      *
-     * @since 1.1
+     * @since 2.0
      * @return bool
      */
     public function filtersExist();
@@ -43,7 +45,7 @@ interface Filterable
     /**
      * Check if there have been anything added for a specific filter.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $name
      * @return bool
      */
@@ -52,7 +54,7 @@ interface Filterable
     /**
      * Get all filters that have been added.
      *
-     * @since 1.0
+     * @since 2.0
      * @return array
      */
     public function getAllFilters();
@@ -60,7 +62,7 @@ interface Filterable
     /**
      * Get everything that have been added for a specific filter.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $name
      * @return array
      */
@@ -69,7 +71,7 @@ interface Filterable
     /**
      * Remove all the filters.
      *
-     * @since 1.0
+     * @since 2.0
      * @return void
      */
     public function removeAllFilters();
@@ -77,7 +79,7 @@ interface Filterable
     /**
      * Remove a specific filter.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $name
      * @return void
      */

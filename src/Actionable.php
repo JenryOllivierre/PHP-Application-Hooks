@@ -2,17 +2,19 @@
 
 namespace JenryOllivierre\Hooks;
 
+/**
+ * @author      Jenry Ollivierre
+ * 
+ * @since 2.0   First Introduced
+ *              Interface methods previously existed in another interface.
+ */
+
 interface Actionable
 {
     /**
-     * @since 1.1
-     * @author Jenry Ollivierre
-     */
-
-    /**
      * Add a callback to a specific action.
      *
-     * @since 1.1
+     * @since 2.0
      * @param string $name
      * @param callable $callback
      * @param int $priority
@@ -24,7 +26,7 @@ interface Actionable
     /**
      * Apply all the callbacks that was added to a specific action.
      *
-     * @since 1.1
+     * @since 2.0
      * @param string $name
      * @param array $args
      * @param bool $return
@@ -35,7 +37,7 @@ interface Actionable
     /**
      * Check if anything have been added to the actions hook type.
      *
-     * @since 1.1
+     * @since 2.0
      * @return bool
      */
     public function actionsExist();
@@ -43,7 +45,7 @@ interface Actionable
     /**
      * Check if there has been anything added for a specific action.
      *
-     * @since 1.1
+     * @since 2.0
      * @param string $name
      * @return bool
      */
@@ -52,7 +54,7 @@ interface Actionable
     /**
      * Get all actions that have been added.
      *
-     * @since 1.1
+     * @since 2.0
      * @return array
      */
     public function getAllActions();
@@ -60,7 +62,7 @@ interface Actionable
     /**
      * Get everything that have been added for a specific action.
      *
-     * @since 1.1
+     * @since 2.0
      * @param string $name
      * @return array
      */
@@ -69,7 +71,7 @@ interface Actionable
     /**
      * Remove all the actions.
      *
-     * @since 1.1
+     * @since 2.0
      * @return void
      */
     public function removeAllActions();
@@ -77,7 +79,7 @@ interface Actionable
     /**
      * Remove a specific action.
      *
-     * @since 1.1
+     * @since 2.0
      * @param string $name
      * @return void
      */

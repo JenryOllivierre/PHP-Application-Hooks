@@ -2,12 +2,19 @@
 
 namespace JenryOllivierre\Hooks;
 
+/**
+ * @author      Jenry Ollivierre
+ * 
+ * @since 2.0   First Introduced
+ *              Trait methods previously existed in a class.
+ */
+
 trait HasFilters
 {
     /**
      * Add a callback to a specific filter.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $name
      * @param callable $callback
      * @param int $priority
@@ -22,7 +29,7 @@ trait HasFilters
     /**
      * Apply all the callbacks that was added to a specific filter.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $name
      * @param mixed $value
      * @param array $args
@@ -36,7 +43,7 @@ trait HasFilters
     /**
      * Check if anything have been added to the filters hook type.
      *
-     * @since 1.0
+     * @since 2.0
      * @return bool
      */
     public function filtersExist()
@@ -47,7 +54,7 @@ trait HasFilters
     /**
      * Check if there have been anything added for a specific filter.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $name
      * @return bool
      */
@@ -59,7 +66,7 @@ trait HasFilters
     /**
      * Get all filters that have been added.
      *
-     * @since 1.0
+     * @since 2.0
      * @return array
      */
     public function getAllFilters()
@@ -70,7 +77,7 @@ trait HasFilters
     /**
      * Get everything that have been added for a specific filter.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $name
      * @return array
      */
@@ -82,7 +89,7 @@ trait HasFilters
     /**
      * Remove all the filters.
      *
-     * @since 1.0
+     * @since 2.0
      * @return void
      */
     public function removeAllFilters()
@@ -93,7 +100,7 @@ trait HasFilters
     /**
      * Remove a specific filter.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $name
      * @return void
      */

@@ -2,6 +2,13 @@
 
 namespace JenryOllivierre\Hooks;
 
+/**
+ * @author      Jenry Ollivierre
+ * 
+ * @since 2.0   First Introduced.
+ *              Trait methods previously existed in a class.
+ */
+
 trait HasActions
 {
     /**
