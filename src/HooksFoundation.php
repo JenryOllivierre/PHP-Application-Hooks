@@ -2,12 +2,17 @@
 
 namespace JenryOllivierre\Hooks;
 
+/**
+ * @author      Jenry Ollivierre
+ * @since 2.0   First Introduced
+ */
+
 abstract class HooksFoundation implements Hookable
 {
     /**
      * To store our hooks.
      *
-     * @since 1.0
+     * @since 2.0
      * @var array
      */
     private $hooks = [];
@@ -15,7 +20,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Get all the hooks that have been added.
      *
-     * @since 1.0
+     * @since 2.0
      * @return array
      */
     public function getAll()
@@ -26,7 +31,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Store a hook.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $type
      * @param string $name
      * @param callable $callback
@@ -45,7 +50,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Resolve all the values for a given hook.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $hookType
      * @param string $name
      * @param mixed $value
@@ -54,7 +59,7 @@ abstract class HooksFoundation implements Hookable
      */
     protected function resolveValues(string $hookType, string $name, $value, array $args = [])
     {
-        if (! $filters = $this->getHook($hookType, $name)) {
+        if (! $filters = $this->getHookByType($hookType, $name)) {
             return $value;
         }
 
@@ -70,7 +75,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Resolve all the tasks for a given hook.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $hookType
      * @param string $name
      * @param array $args
@@ -81,7 +86,7 @@ abstract class HooksFoundation implements Hookable
     {
         $response = null;
 
-        if (! $tasks = $this->getHook($hookType, $name)) {
+        if (! $tasks = $this->getHookByType($hookType, $name)) {
             return;
         }
 
@@ -97,7 +102,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Check if anything have been added to a particular hook type.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $type
      * @return bool
      */
@@ -110,7 +115,7 @@ abstract class HooksFoundation implements Hookable
      * Check if there has been anything set for a specific hook, for a
      * particular hook type.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $hookType
      * @param string $name
      * @return bool
@@ -123,7 +128,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Get everything that has been added to a specific hook type.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $type
      * @return array
      */
@@ -137,7 +142,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Remove all hooks from a hook type.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $type
      * @return void
      */
@@ -150,14 +155,14 @@ abstract class HooksFoundation implements Hookable
      * Get everything that have been added to a specific hook, for a
      * particular hook type.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $type
      * @param string $name
      * @return array
      */
     protected function getHookByType(string $type, string $name)
     {
-        return $this->hookExists($type, $name)
+        return $this->hookExistsByType($type, $name)
             ? $this->hooks[$type][$name]
             : [];
     }
@@ -165,7 +170,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Remove a hook type.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $type
      * @return void
      */
@@ -177,7 +182,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Remove a specific hook for a particular hook type.
      *
-     * @since 1.0
+     * @since 2.0
      * @param string $hookType
      * @param string $name
      * @return void
@@ -190,7 +195,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Resolve a single value callback.
      *
-     * @since 1.0
+     * @since 2.0
      * @param mixed $value
      * @param callable $callback
      * @param array $args
@@ -206,7 +211,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Resolve a single task callback.
      *
-     * @since 1.0
+     * @since 2.0
      * @param callable $callback
      * @param array $args
      * @param int $params
@@ -220,7 +225,7 @@ abstract class HooksFoundation implements Hookable
     /**
      * Sort the hooks priority from smallest to largest.
      *
-     * @since 1.0
+     * @since 2.0
      * @param array $hooks
      * @return void
      */
@@ -234,13 +239,13 @@ abstract class HooksFoundation implements Hookable
      * Get the arguments that are to be passed to the callback
      * based on the $params value given.
      *
-     * @since 1.0
+     * @since 2.0
      * @param array $args
      * @param int $params
      * @return array
      */
     private function getArgsPassable(array $args = [], int $params = 0)
     {
-        return empty($params) ? $args : array_slice($args, 0, $params)
+        return empty($params) ? $args : array_slice($args, 0, $params);
     }
 }
