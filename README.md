@@ -6,7 +6,7 @@ PHP Application Hooks is a lightweight standalone package that lets you control 
 
 ## Installation
 
-install via composer with `composer require "jenryollivierre/php-application-hooks": "1.1.*"` or simply download from [github](https://github.com/JenryOllivierre/PHP-Application-Hooks)
+install via composer with `composer require "jenryollivierre/php-application-hooks": "2.0.*"` or simply download from [github](https://github.com/JenryOllivierre/PHP-Application-Hooks)
 
 ## How To Use
 
@@ -60,8 +60,7 @@ The `addAction()` method takes 4 parameters.
 - string $name :: the name of the action to hook into. 
 - callable $callback :: Closures | function name | array of a class instance and its method
 - int $priority :: defaults to 100. Higher number priority actions are ran latest.
-
-(4) int $arguments - the number of arguments to pass to the $callback. By default, this passes all arguments. If the main application passed an array of 5 arguments to the action, the 3rd party app can state 2 to only get the first 2 parameters.
+- int $arguments :: the number of arguments to pass to the $callback. By default, this passes all arguments. If the main application passed an array of 5 arguments to the action, the 3rd party app can state 2 to only get the first 2 parameters.
 
 To resolve the example above, the given callback to use was Post::cleanUpDatabase(). It would work like this:
 
